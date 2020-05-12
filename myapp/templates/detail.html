@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+<body>
+    
+    {% block contents %}
+    <br>
+
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" name = "title" value = "{{details.title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"> Contents </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name = "body" value = "{{details.body}}">{{details.body}}</textarea>
+        </div>
+
+        <input class = "btn btn_info" type = "submit" value = "submit">
+    </form>
+
+    <a href = "{% url 'delete' details.id %}"> delete </a>
+    <a href = "{% url 'edit' details.id %}"> edit </a> 
+    <a href = "{% url 'home' %}"> home </a>
+
+    <br>
+
+
+    {% endblock %}
+
+</body>

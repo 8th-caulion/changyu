@@ -5,16 +5,28 @@
     
     {% block contents %}
 
-    <h2 style="font-family:Comic Sans MS; text-align:center"> Here is HOME! </h2>
+    {% for blog in blogs.all %}
 
-    <p style = "font-family:Comic Sans MS; text-align:center"> 
-        Hello, this page will introduce about CHANGYU.
-        Thanks for visiting my site!!
-    </p>
+    <br> 
+    <div class="container"> 
+        <div class="card"> 
+            <div class="card-body"> 
+                <h5 class="card-title">
+                    {{ blog.title }}
+                </h5> 
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{ blog.pub_date }}
+                </h6> 
+                <p class="card-text">{{ blog.summary }}</p> 
+                <a href="{% url 'detail' blog.id %}" class="card-link">...more</a> 
+            </div> 
+        </div> 
+    </div>
 
-    <h5 style = "text-align:center;"><a href="{% url 'profile' %}"> changyu's profile </a> </h5>
-    <h5 style = "text-align:center;"><a href="{% url 'hobby' %}"> changyu's hobby </a> </h5>
-    
+
+    {% endfor %}
+
+
     {% endblock %}
 
 </body>

@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import myapp.views
-import hobby.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
-    path('hobby/', hobby.views.hobby, name="hobby"),
+    path('blog/<int:blog_id>', myapp.views.detail, name="detail"),
+    path('blog/new', myapp.views.new, name="new"),
+    path('blog/create', myapp.views.create, name = "create"),
+    path('blog/edit/<int:blog_id>', myapp.views.edit, name="edit"),
+    path('blog/update/<int:blog_id>', myapp.views.update, name="update"),
+    path('blog/delete/<int:blog_id>', myapp.views.delete, name="delete"),
 ]
