@@ -5,27 +5,34 @@
     
     {% block contents %}
 
+    <br>
+
     {% for blog in blogs.all %}
 
-    <br> 
     <div class="container"> 
         <div class="card"> 
             <div class="card-body"> 
-                <h5 class="card-title">
+                <h5 class="card-title"> 
                     {{ blog.title }}
                 </h5> 
-                <h6 class="card-subtitle mb-2 text-muted">
-                    {{ blog.pub_date }}
-                </h6> 
-                <p class="card-text">{{ blog.summary }}</p> 
-                <a href="{% url 'detail' blog.id %}" class="card-link">...more</a> 
+                <h6 class="card-subtitle mb-2 text-muted"> 
+                    {{ blog.pub_date }} 
+                </h6>
+                <h6 class="card-subtitle mb-2 text-muted"> 
+                    {{ blog.writer }},      {{ blog.category }} 
+                </h6>
+                <p class="card-text">{{ blog.summary }}
+                    <a href="{% url 'detail' blog.id %}" class="card-link">...more</a> 
+                </p> 
+                
             </div> 
         </div> 
     </div>
-
-
+    <br>
+    
     {% endfor %}
 
+    <br> <br>
 
     {% endblock %}
 

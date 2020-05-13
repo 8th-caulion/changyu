@@ -10,6 +10,9 @@ def home(request):
 def profile(request):
     return render(request, 'profile.html')
 
+def hobby(request):
+    return render(request, 'hobby.html')
+
 def new(request):
     return render(request, 'new.html', {'new' : new})
 
@@ -22,6 +25,8 @@ def create(request):
     blog.title = request.GET['title']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
+    blog.writer = request.GET['writer']
+    blog.category = request.GET['category']
     blog.save()
     return redirect('home')
 
@@ -34,6 +39,8 @@ def update(request, blog_id):
     blog.title = request.GET['title']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
+    blog.writer = request.GET['writer']
+    blog.category = request.GET['category']
     blog.save()
     return redirect('home')
 

@@ -21,6 +21,7 @@
                 STUDY
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="alert alert-danger" role="alert"> Will be updated! </div>
                 <a class="dropdown-item" href="#">C language</a>
                 <a class="dropdown-item" href="#">Data structure</a>
                 <a class="dropdown-item" href="#">Algorithm</a>
@@ -31,6 +32,7 @@
                   DEVELOPMENT
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <div class="alert alert-danger" role="alert"> Will be updated! </div>
                   <a class="dropdown-item" href="#">Django</a>
                   <a class="dropdown-item" href="#">HTML</a>
                   <a class="dropdown-item" href="#">Tips</a>
@@ -42,18 +44,22 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                  <a class="dropdown-item" href="#">Hobby</a>
-                  <a class="dropdown-item" href="#">Visitor's log</a>
+                  <a class="dropdown-item" href="{% url 'hobby' %}">Hobby</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'new' %}">NEW</a>
+                <a class="nav-link" href="{% url 'new' %}"> VISITOR's LOG </a>
               </li>
             </li>
           </ul>
         </div>
       </nav>
     
+    <style>
+      img { width: 100%; }
+    </style>
+
+
      <!--bootstrap CDN-->
      <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    
